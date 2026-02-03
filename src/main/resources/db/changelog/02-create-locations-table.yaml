@@ -1,0 +1,48 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2-create-locations
+      author: yoxaron
+      changes:
+        - createTable:
+            tableName: locations
+            columns:
+              - column:
+                  name: id
+                  type: BIGSERIAL
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: user_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: latitude
+                  type: DECIMAL(9, 6)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: longitude
+                  type: DECIMAL(9, 6)
+                  constraints:
+                    nullable: false
+        - addForeignKeyConstraint:
+            baseTableName: locations
+            baseColumnNames: user_id
+            constraintName: fk_locations_users
+            referencedTableName: users
+            referencedColumnNames: id
+            onDelete: CASCADE
+        - createIndex:
+            indexName: idx_locations_user_id
+            tableName: locations
+            columns:
+              - column:
+                  name: user_id

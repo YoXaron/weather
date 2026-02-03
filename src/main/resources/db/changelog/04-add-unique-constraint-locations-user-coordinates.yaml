@@ -1,0 +1,9 @@
+databaseChangeLog:
+  - changeSet:
+      id: 3-add-unique-constraint-locations-user-coordinates
+      author: yoxaron
+      changes:
+        - addUniqueConstraint:
+            tableName: locations
+            columnNames: user_id, latitude, longitude
+            constraintName: uk_locations_user_coordinates

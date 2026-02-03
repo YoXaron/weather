@@ -1,0 +1,13 @@
+databaseChangeLog:
+  - include:
+      file: 01-create-users-table.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: 02-create-locations-table.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: 03-create-sessions-table.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: 04-add-unique-constraint-locations-user-coordinates.yaml
+      relativeToChangelogFile: true
