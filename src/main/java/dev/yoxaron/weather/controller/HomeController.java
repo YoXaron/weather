@@ -40,7 +40,7 @@ public class HomeController {
     public void logCacheStats(String cacheName) {
         CaffeineCache cache = (CaffeineCache) cacheManager.getCache(cacheName);
         if (cache != null) {
-            log.info("Cache [{}] Stats: {}", cacheName, cache.getNativeCache().stats().toString());
+            log.info("Cache [{}] Stats: {}", cacheName, cache.getNativeCache().stats());
         }
     }
 }

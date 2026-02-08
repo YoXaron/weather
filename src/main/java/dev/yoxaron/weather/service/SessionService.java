@@ -69,7 +69,6 @@ public class SessionService {
         });
     }
 
-    @Transactional
     public void invalidateAllUserSessions(User user) {
         log.info("Invalidating all active sessions for user: {}", user.getLogin());
         sessionRepository.invalidateAllUserSessions(user, LocalDateTime.now());

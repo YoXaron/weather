@@ -14,12 +14,6 @@ public class LocationController {
 
     private final LocationService locationService;
 
-    @GetMapping
-    public String searchLocation(HttpServletRequest request) {
-        return null;
-
-    }
-
     @PostMapping
     public String addLocation(@ModelAttribute LocationDto locationDto, HttpServletRequest request) {
         Long currentUserId = (Long) request.getAttribute("currentUserId");
