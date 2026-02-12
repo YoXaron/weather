@@ -43,3 +43,14 @@ The application integrates with OpenWeatherMap API using Spring's RestTemplate:
 2. **Weather Retrieval** - RestTemplate fetches current weather data by passing latitude/longitude to Current Weather API
 3. **Response Mapping** - Jackson automatically deserializes JSON responses into Java DTOs
 4. **Caching** - Weather data is cached using Caffeine to minimize API calls and stay within rate limits (60 req/min)
+
+## How to run
+
+**Prerequisites**: git, docker, docker-compose
+
+1. Clone the repository
+2. Get your OpenWeather API key (or use the global code search on GH)
+3. Rename `.env.example` to `.env` and fill in your values
+4. Rename `application.properties.example` to `application.properties`
+5. Run `docker-compose up --build` in the project root directory
+6. Open `http://localhost:8080/home`
